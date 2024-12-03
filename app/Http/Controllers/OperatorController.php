@@ -74,7 +74,7 @@ class OperatorController extends Controller
             'ability' => 'required|string|max:255',
             'photo' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
         ]);
-        
+
         $operator->update($request->except(['_token', '_method']));
 
         if ($request->hasFile('photo')) {

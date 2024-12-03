@@ -21,7 +21,7 @@ Route::get('/operator/create', [OperatorController::class, 'create'])->name('ope
 Route::post('/operator/store', [OperatorController::class, 'store'])->name('operators.store');
 Route::get('/operator/show', [OperatorController::class, 'show'])->name('operators.show');
 Route::get('/operator/{operator}/edit', [OperatorController::class, 'edit'])->name('operators.edit');
-Route::delete('/operator/destroy', [OperatorController::class, 'destroy'])->name('operators.destroy');
+Route::delete('/operator/{operator}/destroy', [OperatorController::class, 'destroy'])->name('operators.destroy');
 
 
 // Route::resource('weapons', WeaponController::class);

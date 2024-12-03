@@ -18,7 +18,6 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Nama</th>
                 <th>Primary Weapon</th>
                 <th>Secondary Weapon</th>
@@ -30,7 +29,6 @@
         <tbody>
             @forelse ($operators as $operator)
                 <tr>
-                    <td>{{ $operator->id }}</td> <!-- Kolom ID -->
                     <td>{{ $operator->name }}</td> <!-- Kolom Nama -->
                     <td>{{ $operator->primary_weapon }}</td> <!-- Kolom Senjata Utama -->
                     <td>{{ $operator->secondary_weapon }}</td> <!-- Kolom Senjata Sekunder -->
