@@ -12,8 +12,8 @@ class WeaponController extends Controller
      */
     public function index()
     {
-         $weapon = Weapon::paginate(20);
-         return view('weapon.index', compact('weapon'));
+         $weapons = Weapon::paginate(20);
+         return view('weapon.index', compact('weapons'));
     }
 
     /**
@@ -29,7 +29,7 @@ class WeaponController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validated([
+        $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:50',
             'damage' => 'required|integer|min:0',
@@ -41,7 +41,7 @@ class WeaponController extends Controller
 
         Weapon::create($data);
 
-        return redirect()->route('weapon.index')->width('success', 'Weapon created successfully!');
+        return redirect()->route('weapons.index')->with('success', 'Weapon created successfully!');
     }
 
     /**
@@ -55,7 +55,7 @@ class WeaponController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Weapon $weapon)
     {
         return view('weapon.edit', compact('weapon'));
     }
@@ -65,19 +65,14 @@ class WeaponController extends Controller
      */
     public function update(Request $request, Weapon $weapon)
     {
-        $data = $request->except(['_token', '_method']);
-
-
-        $weapon->update($data);
-
-        $request->validated([
+        $request->validate([
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:50',
             'damage' => 'required|integer|min:0',
             'fire_rate' => 'required|integer|min:0',
             'photo' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
         ]);
-        $weapon = Weapon::where('id', $weapon->id);
+
         $weapon->update($request->except(['_token', '_method']));
 
         if ($request->hasFile('photo')) {
@@ -86,7 +81,7 @@ class WeaponController extends Controller
             $filePath = $file->storeAs('weapon', $filename);
             $weapon->update(['photo' => $filePath]);
         }
-        return redirect()->route('weapon.index');
+        return redirect()->route('weapons.index')->with('success', 'Weapon updated successfully!');
     }
 
     /**
@@ -95,6 +90,6 @@ class WeaponController extends Controller
     public function destroy(Weapon $weapon)
     {
         $weapon->delete();
-        return redirect()->route('weapon.index')->width('success', 'Weapon deleted successfully!');
+        return redirect()->route('weapons.index')->with('success', 'Weapon deleted successfully!');
     }
 }

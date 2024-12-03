@@ -1,30 +1,28 @@
 @extends('layouts.app')
 
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
+@section('content')
+
+<div class="container">
+    <h1 class="mb-4">Weapons</h1>
 
 <a href="{{ route('weapons.create') }}" class="btn btn-primary mb-3">Add Weapon</a>
 
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Type</th>
             <th>Damage</th>
-            <th>Actions</th>
+            <th>Fire Rate</th>
         </tr>
     </thead>
     <tbody>
         @forelse ($weapons as $weapon)
             <tr>
-                <td>{{ $weapon->id }}</td>
                 <td>{{ $weapon->name }}</td>
                 <td>{{ $weapon->type }}</td>
                 <td>{{ $weapon->damage }}</td>
+                <td>{{ $weapon->fire_rate }}</td>
                 <td>
                     <a href="{{ route('weapons.show', $weapon->id) }}" class="btn btn-info btn-sm">View</a>
                     <a href="{{ route('weapons.edit', $weapon->id) }}" class="btn btn-warning btn-sm">Edit</a>
@@ -42,5 +40,6 @@
         @endforelse
     </tbody>
 </table>
+</div>
 
 @endsection

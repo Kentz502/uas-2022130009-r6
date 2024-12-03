@@ -23,6 +23,16 @@ Route::get('/operator/show', [OperatorController::class, 'show'])->name('operato
 Route::get('/operator/{operator}/edit', [OperatorController::class, 'edit'])->name('operators.edit');
 Route::delete('/operator/{operator}/destroy', [OperatorController::class, 'destroy'])->name('operators.destroy');
 
+Route::get('/weapon/index', [App\Http\Controllers\WeaponController::class, 'index'])->name('weapons.index');
+Route::put('/weapon/{weapon}/update', [WeaponController::class, 'update'])->name('weapons.update');
+Route::get('/weapon/create', [WeaponController::class, 'create'])->name('weapons.create');
+Route::post('/weapon/store', [WeaponController::class, 'store'])->name('weapons.store');
+Route::get('/weapon/show', [WeaponController::class, 'show'])->name('weapons.show');
+Route::get('/weapon/{weapon}/edit', [WeaponController::class, 'edit'])->name('weapons.edit');
+Route::delete('/weapon/{weapon}/destroy', [WeaponController::class, 'destroy'])->name('weapons.destroy');
+
+
+
 
 // Route::resource('weapons', WeaponController::class);
 // Route::resource('maps', MapController::class);
