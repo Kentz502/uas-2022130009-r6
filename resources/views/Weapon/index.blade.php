@@ -13,7 +13,7 @@
             <th>Name</th>
             <th>Type</th>
             <th>Damage</th>
-            <th>Fire Rate</th>
+            <th>Fire Rate/Minute</th>
         </tr>
     </thead>
     <tbody>

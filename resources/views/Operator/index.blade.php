@@ -36,12 +36,12 @@
                     <td>{{ $operator->ability }}</td> <!-- Kolom Kemampuan -->
                     <td>
                         <!-- Tombol Tindakan -->
-                        <a href="{{ route('operators.show', $operator->id) }}" class="btn btn-info btn-sm">Lihat</a>
+                        <a href="{{ route('operators.show', $operator->id) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('operators.edit', $operator->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('operators.destroy', $operator->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus operator ini?')">Hapus</button>
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus operator ini?')">Delete</button>
                         </form>
                     </td>
                 </tr>
