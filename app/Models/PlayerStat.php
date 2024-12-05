@@ -10,8 +10,10 @@ class PlayerStat extends Model
     use HasFactory;
 
     protected $fillable = [
+        'name',
         'kills',
         'deaths',
         'assists',
+        'rank',
     ];
 }

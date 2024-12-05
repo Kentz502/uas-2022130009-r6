@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Map;
 use App\Models\Operator;
 use App\Models\User;
+use App\Models\Weapon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,5 +25,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(OperatorTableSeeder::class);
         $this->call(MapTableSeeder::class);
+        $this->call(WeaponTableSeeder::class);
     }
 }
