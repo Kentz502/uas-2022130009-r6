@@ -45,7 +45,7 @@
 
         <div class="form-group mb-3">
             <label for="ability">Ability</label>
-            <textarea name="ability" id="ability" class="form-control">{{ old('ability') }}</textarea>
+            <input type="text" name="ability" id="ability" class="form-control" value="{{ old('ability') }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Simpan</button>

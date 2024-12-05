@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('player_stats', function (Blueprint $table) {
             $table->id();
+            $table-> string('name', 255);
+            $table->integer('kills')->default(0);
+            $table->integer('deaths')->default(0);
+            $table->integer('assists')->default(0);
+            $table->string('rank');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

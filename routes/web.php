@@ -8,12 +8,17 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PlayerStatController;
 use App\Http\Controllers\TournamentController;
 use App\Models\Operator;
+use App\Models\PlayerStat;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
+
+Route::get('/', function () {
+    return view('index.blade.php '); // Mengarahkan ke index.blade.php
+})->name('home');
 
 Route::get('/operator/index', [App\Http\Controllers\OperatorController::class, 'index'])->name('operators.index');
 Route::put('/operator/{operator}/update', [OperatorController::class, 'update'])->name('operators.update');
@@ -39,6 +44,16 @@ Route::post('/map/store', [MapController::class, 'store'])->name('maps.store');
 Route::get('/map/show', [MapController::class, 'show'])->name('maps.show');
 Route::get('/map/{map}/edit', [MapController::class, 'edit'])->name('maps.edit');
 Route::delete('/map/{map}/destroy', [MapController::class, 'destroy'])->name('maps.destroy');
+
+
+
+Route::get('/playerstat/index', [App\Http\Controllers\PlayerStatController::class, 'index'])->name('playerstats.index');
+Route::put('/playerstat/{playerstat}/update', [PlayerStatController::class, 'update'])->name('playerstats.update');
+Route::get('/playerstat/create', [PlayerStatController::class, 'create'])->name('playerstats.create');
+Route::post('/playerstat/store', [PlayerStatController::class, 'store'])->name('playerstats.store');
+Route::get('/playerstat/show', [PlayerStatController::class, 'show'])->name('playerstats.show');
+Route::get('/playerstat/{playerstat}/edit', [PlayerStatController::class, 'edit'])->name('playerstats.edit');
+Route::delete('/playerstat/{playerstat}/destroy', [PlayerStatController::class, 'destroy'])->name('playerstats.destroy');
 
 
 

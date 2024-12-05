@@ -29,6 +29,12 @@ class MapTableSeeder extends Seeder
                 'description' => 'Team Rainbow has been called in to assist the local law enforcement and regain control of the border. A mix of old and new buildings with open air pathways make this the most destructible and open planned map to date',
                 'location' => 'Middle East',
             ),
+            3 =>
+            array (
+                'name' => 'Villa',
+                'description' => 'The land belongs to the Vinciguerra, a dangerous crime family known for their smuggling activities. Now we catch the villa in a snapshot of times: Vincguerras are burning documents and transporting to their holdings before the bog raid. But they have got wind of Operation Para Bellum and fled, leaving everything in disarray wwith vital information ready for the taking.',
+                'location' => 'Tuscany, Italy',
+            ),
         ));
     }
 }

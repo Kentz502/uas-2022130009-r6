@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
-<divbtn-primary class="card">
-    <div class=" card-body">
-        <h5 class="card-title">{{ $weapon->name }}</h5>
-        <p class="card-text"><strong>Type:</strong> {{ $weapon->type }}</p>
-        <p class="card-text"><strong>Damage:</strong> {{ $weapon->damage }}</p>
-        <p class="card-text"><strong>Fire_Rate:</strong> {{ $weapon->fire_rate }}</p>
+    <div class="container">
+        <h1>{{ $weapon->name }}</h1>
+        <p>Name: {{ $weapon->name }}</p>
+        <p>Type: {{ $weapon->type }}</p>
+        <p>Damage: {{ $weapon->damage }}</p>
+        <p>Fire Rate: {{ $weapon->fire_rate }}</p>
         <img src="{{ $weapon->photo ? Storage::url($weapon->photo) : 'https://placehold.co/200' }}" class="img-fluid rounded-start" alt="{{ $weapon->name }}">
     </div>
-</form>
-
 @endsection
