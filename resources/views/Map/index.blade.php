@@ -7,12 +7,13 @@
 
 <a href="{{ route('maps.create') }}" class="btn btn-primary mb-3">Add Map</a>
 
-<table class="table table-bordered">
+<table class="table table-striped table-dark">
     <thead>
         <tr>
             <th>Name</th>
             <th>Description</th>
             <th>Location</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>

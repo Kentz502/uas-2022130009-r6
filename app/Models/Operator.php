@@ -15,5 +15,6 @@ class Operator extends Model
         'primary_type',
         'secondary_weapon',
         'ability',
+        'photo',
     ];
 }

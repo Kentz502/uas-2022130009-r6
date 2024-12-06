@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tounaments', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('operators', function (Blueprint $table) {
+            $table->string('photos')->nullable()->after('ability'); // Tambahkan kolom photos
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tounaments');
+        Schema::table('operators', function (Blueprint $table) {
+            $table->dropColumn('photos');
+        });
     }
 };

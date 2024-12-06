@@ -7,13 +7,14 @@
 
 <a href="{{ route('weapons.create') }}" class="btn btn-primary mb-3">Add Weapon</a>
 
-<table class="table table-bordered">
+<table class="table table-striped table-dark">
     <thead>
         <tr>
             <th>Name</th>
             <th>Type</th>
             <th>Damage</th>
             <th>Fire Rate/Minute</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>

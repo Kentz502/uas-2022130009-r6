@@ -15,7 +15,7 @@
     <a href="{{ route('operators.create') }}" class="btn btn-primary mb-3">Add Operator</a>
 
     <!-- Tabel Daftar Operator -->
-    <table class="table table-bordered">
+    <table class="table table-striped table-dark">
         <thead>
             <tr>
                 <th>Nama</th>

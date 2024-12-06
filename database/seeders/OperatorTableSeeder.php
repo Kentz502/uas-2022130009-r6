@@ -18,6 +18,7 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => 'P226 MK 25',
                 'primary_type' => 'Attacker',
                 'ability' => 'EMP GRENADE',
+                'photos' => 'public/thatcher.jpg',
             ),
             1 =>
             array (
@@ -26,6 +27,7 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => '5.7 USG',
                 'primary_type' => 'Attacker',
                 'ability' => 'EXOTHERMIC CHARGE',
+                'photos' => 'public/thermite.jpg',
             ),
             2 =>
             array (
@@ -34,6 +36,7 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => 'PMM',
                 'primary_type' => 'Attacker',
                 'ability' => 'FLIP SIDE',
+                'photos' => 'public/glaz.jpg',
             ),
             3 =>
             array (
@@ -42,6 +45,7 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => 'P12',
                 'primary_type' => 'Attacker',
                 'ability' => 'G52 TACTICAL SHIELD',
+                'photos' => 'public/blitz.jpg',
             ),
             4 =>
             array (
@@ -50,6 +54,7 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => 'P226 MK 25',
                 'primary_type' => 'Defender',
                 'ability' => 'REMOTE GAS GRENADE',
+                'photos' => 'public/smoke.jpg',
             ),
             5 =>
             array (
@@ -58,14 +63,16 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => '5.7 USG',
                 'primary_type' => 'Defender',
                 'ability' => 'CARDIAC SENSOR',
+                'photos' => 'public/pulse.jpg',
             ),
             6 =>
             array (
                 'name' => 'Kapkan',
                 'primary_weapon' => '9X19VSN',
                 'secondary_weapon' => 'PMM',
-                'primary_type' => 'Defe',
-                'ability' => 'ENTRY DENIAL DEVICE   ',
+                'primary_type' => 'Defender',
+                'ability' => 'ENTRY DENIAL DEVICE',
+                'photos' => 'public/kapkan.jpg',
             ),
             7 =>
             array (
@@ -74,6 +81,7 @@ class OperatorTableSeeder extends Seeder
                 'secondary_weapon' => 'P12',
                 'primary_type' => 'Defender',
                 'ability' => 'SHOCK WIRE',
+                'photos' => 'public/bandit.jpg',
             ),
         ));
     }

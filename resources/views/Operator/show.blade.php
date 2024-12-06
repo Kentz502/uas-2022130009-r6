@@ -8,6 +8,6 @@
         <p>Primary Weapon: {{ $operator->primary_weapon }}</p>
         <p>Secondary Weapon: {{ $operator->secondary_weapon }}</p>
         <p>Ability: {{ $operator->ability }}</p>
-        <img src="{{ $operator->photo ? Storage::url($operator->photo) : 'https://placehold.co/200' }}" class="img-fluid rounded-start" alt="{{ $operator->name }}">
+        <img src="{{ $operator->photos ? Storage::URL($operator->photos) : 'https://placehold.co/200' }}" class="img-fluid rounded-start" alt="{{ $operator->name }}">
     </div>
 @endsection

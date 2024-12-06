@@ -7,7 +7,7 @@
 
 <a href="{{ route('playerstats.create') }}" class="btn btn-primary mb-3">Add PlayerStat</a>
 
-<table class="table table-bordered">
+<table class="table table-striped table-dark">
     <thead>
         <tr>
             <th>Name</th>
@@ -15,6 +15,7 @@
             <th>Deaths</th>
             <th>Assist</th>
             <th>Rank</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>

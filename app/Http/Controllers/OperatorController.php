@@ -35,10 +35,10 @@ class OperatorController extends Controller
             'primary_weapon' => 'required|string|max:50',
             'secondary_weapon' => 'required|string|max:50',
             'ability' => 'required|string|max:255',
-            'photo' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
+            'photos' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
-        $data = $request->except(['photo']);
+        $data = $request->except(['photos']);
 
         Operator::create($data);
 
@@ -72,16 +72,16 @@ class OperatorController extends Controller
             'primary_weapon' => 'required|string|max:50',
             'secondary_weapon' => 'required|string|max:50',
             'ability' => 'required|string|max:255',
-            'photo' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
+            'photos' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $operator->update($request->except(['_token', '_method']));
 
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
+        if ($request->hasFile('photos')) {
+            $file = $request->file('photos');
             $filename = $file->hashName();
             $filePath = $file->storeAs('operator', $filename);
-            $operator->update(['photo' => $filePath]);
+            $operator->update(['photos' => $filePath]);
         }
         return redirect()->route('operators.index')->with('success', 'Operator updated successfully!');
     }
