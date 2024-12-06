@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tournament;
 use Illuminate\Http\Request;
 
 class RSIXController extends Controller
@@ -41,8 +42,12 @@ class RSIXController extends Controller
             (object) ['id' => 1, 'name' => 'Kenji', 'stat' => 'Top Player Stats'],
             (object) ['id' => 2, 'name' => 'Onixd502', 'stat' => 'Top Player Stats']
         ];
+        $tournaments = [
+            (object) ['id' => 1, 'name' => 'Bravo Tournament', 'description' => 'Bravo Tournament'],
+            (object) ['id' => 2, 'name' => 'Charlie Tournament', 'description' => 'Charlie Tournament'],
+        ];
 
         // Send data to the view
-        return view('index', compact('operators', 'weapons', 'maps', 'playerStats'));
+        return view('index', compact('operators', 'weapons', 'maps', 'playerStats', 'tournaments'));
     }
 }

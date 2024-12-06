@@ -143,16 +143,18 @@
         </div>
 
         <!-- Tournament Section -->
-        <section id="tournament">
-            <h2 class="text-center mb-4">Tournaments</h2>
-            <!-- Add tournament data here -->
+    <section id="tournament">
+        <h2 class="text-center mb-4">Tournaments</h2>
+        @foreach($tournaments as $tournament)
             <div class="card mb-4">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Upcoming Tournament</h5>
-                    <p class="card-text">Details about the next Rainbow Six Siege tournament.</p>
+                    <h5 class="card-title">
+                    <a href="{{ route('tournaments.show', $tournament->id) }}" class="text-white">{{ $tournament->name }}</a>
+                    </h5>
                 </div>
-            </div>
-        </section>
+             </div>
+        @endforeach
+    </section>
     </div>
 
     <!-- Footer -->
